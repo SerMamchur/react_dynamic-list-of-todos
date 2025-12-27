@@ -1,9 +1,9 @@
-import { Status } from 's../../types/Status';
+import { Status } from '../../types/Status';
 
 interface Props {
   onStatusChange: (e: Status) => void;
   query: string;
-  status: string;
+  status: Status;
   onInputChange: (e: string) => void;
   handleInputReset: () => void;
 }

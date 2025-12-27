@@ -3,14 +3,14 @@ import { Loader } from '../Loader';
 import { User } from '../../types/User';
 import { Todo } from '../../types/Todo';
 
-interface Users {
+interface Props {
   user: User | null;
   handleClickClose: () => void;
   todo: Todo | null;
   loadingUser: boolean;
 }
 
-export const TodoModal: React.FC<Users> = ({
+export const TodoModal: React.FC<Props> = ({
   user,
   handleClickClose,
   todo,
@@ -55,7 +55,7 @@ export const TodoModal: React.FC<Users> = ({
 
               {' by '}
 
-              <a href="mailto:Sincere@april.biz">{user.name}</a>
+              <a href={`"mailto:${user.email}"`}>{user.name}</a>
             </p>
           </div>
         </div>
