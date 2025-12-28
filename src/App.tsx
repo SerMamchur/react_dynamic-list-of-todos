@@ -10,7 +10,6 @@ import { Loader } from './components/Loader';
 import { User } from './types/User';
 import { Todo } from './types/Todo';
 import { getTodos, getUser } from '../src/api';
-import { error } from 'console';
 
 export const App: React.FC = () => {
   const [visibleTodos, setVisibleTodos] = useState<Todo[]>([]);
@@ -36,7 +35,7 @@ export const App: React.FC = () => {
     getUser(todo.userId)
       .then(setUser)
       // eslint-disable-next-line no-console
-      .catch(eror => console.error(eror))
+      .catch(error => console.error(error))
       .finally(() => setLoadingUser(false));
   }
 
@@ -68,7 +67,7 @@ export const App: React.FC = () => {
     getTodos()
       .then(setAllTodos)
       // eslint-disable-next-line no-console
-      .catch(err => console.log(err))
+      .catch(error => console.log(error))
       .finally(() => setLoadingTodos(false));
   }, []);
 
